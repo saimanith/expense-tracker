@@ -104,9 +104,9 @@ export default function AddItems({navigation})  {
             <TextInput
               placeholder="amount spent"
               keyboardType="numeric"
-                value={number}
+              value={number}
               onChangeText={handleChange}
-                        style={styles.textinput}
+              style={styles.textinput}
             ></TextInput>
           </View>
 
@@ -169,7 +169,13 @@ export default function AddItems({navigation})  {
               paddingTop: 30,
             }}
           >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
               <View
                 style={{
                   height: 70,
@@ -189,11 +195,15 @@ export default function AddItems({navigation})  {
                   style={styles.noteinput}
                 ></TextInput>
               </View>
-              <View>
-                {" "}
-                            <Icon.Button name="rightcircleo" color="black" backgroundColor="white"
-                                onPress={()=>handleAdd()}></Icon.Button>
-              </View>
+            </View>
+            <View>
+              <Icon.Button
+                name="rightcircleo"
+                color="black"
+                            backgroundColor="white"
+                            size={50}
+                onPress={() => handleAdd()}
+              ></Icon.Button>
             </View>
           </View>
 

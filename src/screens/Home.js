@@ -33,7 +33,11 @@ export default class Home extends React.Component {
           <View style={{ paddingTop: 50 }}>
             <View style={styles.topnav}>
               <Icon name="menu-fold" size={40} color="#00192D" />
-              <Icon name="user" size={40} color="#00192D" />
+              <TouchableOpacity
+                onPress={() => navigate("Chart", { name: "Chart" })}
+              >
+                <Icon name="user" size={40} color="#00192D" />
+              </TouchableOpacity>
             </View>
           </View>
 
