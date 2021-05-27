@@ -9,8 +9,8 @@ export default class ListItem extends Component {
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
-              marginHorizontal: 30,
-              paddingTop: 30,
+              marginHorizontal: 15,
+              paddingTop: 20,
             }}
           >
             <View style={{ flexDirection: "row", alignItems: "center" }}>

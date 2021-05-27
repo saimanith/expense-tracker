@@ -29,7 +29,8 @@ export default class Chart extends React.Component {
           const {navigate} = this.props.navigation;
         return (
             <ImageBackground
-                source={require("../images/bg.jpg")}
+                resizeMode='cover'
+                source={require("../images/graphbg.jpg")}
                 style={{ width: "100%", height: "100%" }}
             >
                 <View style={{ paddingTop: 50 }}>
@@ -41,7 +42,7 @@ export default class Chart extends React.Component {
                 </View>
                 <View style={{ paddingTop: 20, paddingHorizontal:30 }}>
                     <Text style={{
-                        color:'#fff',
+                        color:'black',
                         fontSize:30,
                         fontWeight:'700',
                      }}>My Expense</Text>
@@ -49,7 +50,7 @@ export default class Chart extends React.Component {
                 <View style={{ paddingTop: 40,flexDirection:'row', paddingHorizontal:50 }}>
                     <Ent Icon name="calendar" size={30}></Ent>
                     <Text style={{
-                        color:'#fff',
+                        color:'black',
                         fontSize:30,
                         fontWeight:'700',
                      }}>   Nov 2020</Text>
@@ -57,34 +58,34 @@ export default class Chart extends React.Component {
 
                 
 
-                <View style={{ alignItems:'center', marginTop: 100 }}>
-                    <Text style={{ fontWeight: "bold" }}>Daily Liftings</Text>
+                <View style={{ alignItems:'center', marginTop: 70 }}>
+                    <Text style={{ fontWeight: "bold",fontSize:25 }}>My Expenses</Text>
                     <LineChart
                         data={data}
-                        width={300}
-                        height={300}
+                        width={350}
+                        height={350}
                         //yAxisLabel=""
                         //xAxisLabel="Closed Data"
                         yAxisInterval={1}
                         chartConfig={{
-                            backgroundColor: "white",
+                            backgroundColor: `white`,
                             decimalPlaces: 2, // optional, defaults to 2dp
-                            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+                            color: (opacity = 1) => `white`,
+                            labelColor: (opacity = 1) => `white`,
                             style: {
                                 borderRadius: 16
                             },
                             propsForDots: {
-                                r: "6",
-                                strokeWidth: "2",
+                                r: "9",
+                                strokeWidth: "3",
                                 stroke: "#ffa726"
                             }
                         }}
-                        bezier
+                        // bezier
                         style={{
-                            marginVertical: 8,
+                            marginVertical: 10,
             
-                            borderRadius: 16,
+                            borderRadius: 20,
                         }}
                     />
                 </View>

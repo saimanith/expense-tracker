@@ -30,7 +30,7 @@ export default function AddItems({navigation})  {
     function handleAdd() {
     const newList = list.concat({
         image: require("../images/food.png"),
-        title: "food & Drinks",
+        title: "Food & Drinks",
         price: `$ -${number}.00`,
     });
         setList(newList);
@@ -68,163 +68,178 @@ export default function AddItems({navigation})  {
         
       
     return (
-      <View style={styles.container}>
-        <View
-          style={{
-            width: "100%",
-            backgroundColor: "#fff",
-            marginTop: 100,
-            borderTopLeftRadius: 40,
-            borderTopRightRadius: 40,
-          }}
-        >
-          <View
-            style={{ flexDirection: "row", padding: 20, alignItems: "center" }}
-          >
-            <TouchableOpacity
-              onPress={() => navigate("Home", { name: "Home" })}
-            >
-              <Icon name="close" size={40} color="#00192D" />
-            </TouchableOpacity>
-            <Text
-              style={{
-                fontSize: 25,
-                fontWeight: "700",
-                marginLeft: 50,
-              }}
-            >
-              Add Transaction
-            </Text>
-          </View>
-
-          <View style={{ flexDirection: "row", padding: 30 }}>
-            <View style={styles.usd}>
-              <Text style={styles.usdtext}>USD</Text>
-            </View>
-            <TextInput
-              placeholder="amount spent"
-              keyboardType="numeric"
-              value={number}
-              onChangeText={handleChange}
-              style={styles.textinput}
-            ></TextInput>
-          </View>
-
+      <ScrollView>
+        <View style={styles.container}>
           <View
             style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginHorizontal: 30,
-              paddingTop: 30,
-            }}
-          >
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <View
-                style={{
-                  height: 70,
-                  width: 70,
-                  borderRadius: 100,
-                  backgroundColor: "#00192d",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  resizeMode="contain"
-                  style={{ height: 50, width: 50 }}
-                  source={require("../images/food.png")}
-                />
-              </View>
-              <View>
-                <Text
-                  style={{
-                    fontSize: 25,
-                    fontWeight: "bold",
-                    marginLeft: 10,
-                  }}
-                >
-                  Food & Drinks
-                </Text>
-                <View
-                  style={{
-                    borderBottomWidth: 2,
-                    width: "120%",
-                    marginTop: 20,
-                    marginLeft: 20,
-                    opacity: 0.4,
-                  }}
-                ></View>
-              </View>
-            </View>
-            <Icon name="down" size={40} color="#00192D" />
-          </View>
-
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              alignItems: "center",
-              marginHorizontal: 30,
-              paddingTop: 30,
+              width: "100%",
+              backgroundColor: "#fff",
+              marginTop: 100,
+              borderTopLeftRadius: 40,
+              borderTopRightRadius: 40,
             }}
           >
             <View
               style={{
                 flexDirection: "row",
+                padding: 20,
                 alignItems: "center",
                 justifyContent: "space-between",
               }}
             >
-              <View
+              <TouchableOpacity
+                onPress={() => navigate("Home", { name: "Home" })}
+              >
+                <Icon name="close" size={40} color="#00192D" />
+              </TouchableOpacity>
+              <Text
                 style={{
-                  height: 70,
-                  width: 70,
-                  borderRadius: 100,
-                  backgroundColor: "#00192d",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  fontSize: 25,
+                  fontWeight: "700",
+                  marginLeft: 50,
                 }}
               >
-                <Icon name="filetext1" size={40} color="#ffffff" />
-              </View>
-              <View>
-                <TextInput
-                  placeholder="Note"
-                  keyboardType="numeric"
-                  style={styles.noteinput}
-                ></TextInput>
-              </View>
+                Add Transaction
+              </Text>
             </View>
-            <View>
-              <Icon.Button
-                name="rightcircleo"
-                color="black"
-                            backgroundColor="white"
-                            size={50}
-                onPress={() => handleAdd()}
-              ></Icon.Button>
-            </View>
-          </View>
 
-          <View style={styles.recordscontainer}>
-            <Text style={{ padding: 20, fontSize: 25, fontWeight: "500" }}>
-              Last Records
-            </Text>
             <View
               style={{
-                borderBottomWidth: 2,
-                width: "90%",
-                opacity: 0.5,
-                marginLeft: 20,
+                flexDirection: "row",
+                padding: 20,
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
-            ></View>
-            {list.map((item) => {
-              return <RecordItem data={item} />;
-            })}
+            >
+              <View style={styles.usd}>
+                <Text style={styles.usdtext}>USD</Text>
+              </View>
+              <TextInput
+                placeholder="amount spent"
+                keyboardType="numeric"
+                value={number}
+                onChangeText={handleChange}
+                style={styles.textinput}
+              ></TextInput>
+            </View>
+
+            <View
+              style={{
+                flexDirection: "row",
+
+                marginHorizontal: 20,
+                paddingTop: 20,
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <View
+                  style={{
+                    height: 50,
+                    width: 50,
+                    borderRadius: 100,
+                    backgroundColor: "#00192d",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Image
+                    resizeMode="contain"
+                    style={{ height: 30, width: 30 }}
+                    source={require("../images/food.png")}
+                  />
+                </View>
+                <View>
+                  <Text
+                    style={{
+                      fontSize: 21,
+                      fontWeight: "bold",
+                      marginLeft: 20,
+                    }}
+                  >
+                    Food & Drinks
+                  </Text>
+                  <View
+                    style={{
+                      borderBottomWidth: 2,
+                      width: "120%",
+                      marginTop: 20,
+                      marginLeft: 20,
+                      opacity: 0.4,
+                    }}
+                  ></View>
+                </View>
+              </View>
+              <Icon name="down" size={35} color="#00192D" />
+            </View>
+
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                marginHorizontal: 20,
+                paddingTop: 20,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View
+                  style={{
+                    height: 50,
+                    width: 50,
+                    borderRadius: 100,
+                    backgroundColor: "#00192d",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Icon name="filetext1" size={30} color="#ffffff" />
+                </View>
+                <View>
+                  <TextInput
+                    placeholder="Note"
+                    keyboardType="numeric"
+                    style={styles.noteinput}
+                  ></TextInput>
+                </View>
+              </View>
+              <View>
+                <Icon.Button
+                  name="rightcircleo"
+                  color="black"
+                  backgroundColor="white"
+                  size={35}
+                  onPress={() => handleAdd()}
+                ></Icon.Button>
+              </View>
+            </View>
+
+            <View style={styles.recordscontainer}>
+              <Text style={{ padding: 20, fontSize: 23, fontWeight: "700" }}>
+                Last Records
+              </Text>
+              <View
+                style={{
+                  borderBottomWidth: 2,
+                  width: "95%",
+                  opacity: 0.5,
+                  marginLeft: 10,
+                }}
+              ></View>
+              {list.map((item) => {
+                return <RecordItem data={item} />;
+              })}
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     );
   
 }
@@ -235,7 +250,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#22ce99",
   },
-  recordscontainer: {
+    recordscontainer: {
+        
+        justifyContent: 'space-between',
     bottom: 20,
     width: "90%",
     backgroundColor: "#fff",
@@ -272,9 +289,10 @@ const styles = StyleSheet.create({
     borderBottomColor: "#000",
   },
   noteinput: {
-    fontSize: 30,
+    fontSize: 21,
     marginLeft: 10,
     padding: 10,
+    width: "120%",
     borderBottomWidth: 2,
     borderBottomColor: "#000",
   },

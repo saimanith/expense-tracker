@@ -20,8 +20,8 @@ export default class RecordItem extends Component {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
-                marginHorizontal: 30,
-                paddingTop: 30,
+                marginHorizontal: 10,
+                paddingTop: 20,
               }}
             >
               <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -43,7 +43,7 @@ export default class RecordItem extends Component {
                 </View>
                 <Text
                   style={{
-                    fontSize: 25,
+                    fontSize: 21,
                     fontWeight: "bold",
                     marginLeft: 10,
                   }}
@@ -64,10 +64,10 @@ export default class RecordItem extends Component {
             <View
               style={{
                 borderBottomWidth: 2,
-                width: "85%",
+                width: "95%",
                 opacity: 0.3,
-                marginLeft: 20,
-                marginTop: 20,
+                marginLeft: 10,
+                marginTop: 10,
               }}
             ></View>
           </View>

@@ -36,7 +36,7 @@ export default class Home extends React.Component {
               <TouchableOpacity
                 onPress={() => navigate("Chart", { name: "Chart" })}
               >
-                <Icon name="user" size={40} color="#00192D" />
+                <Icon name="linechart" size={40} color="#00192D" />
               </TouchableOpacity>
             </View>
           </View>
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
           <View style={styles.bottomcontainer}>
             <View>
               <View
-                style={{ flexDirection: "row", paddingTop: 20, padding: 50 }}
+                style={{ flexDirection: "row", paddingTop: 20, padding: 30 }}
               >
                 <TouchableOpacity
                   onPress={this.onTabPressed}
@@ -95,15 +95,15 @@ export default class Home extends React.Component {
                   style={{
                     flexDirection: "row",
                     justifyContent: "space-between",
-                    marginHorizontal: 30,
+                    marginHorizontal: 15,
                   }}
                 >
-                  <Text style={{ fontSize: 30, fontWeight: "bold" }}>
+                  <Text style={{ fontSize: 24, fontWeight: "bold" }}>
                     {this.state.todaySelected ? "16th Nov 2020" : "Nov 2020"}
                   </Text>
                   <Text
                     style={{
-                      fontSize: 30,
+                      fontSize: 28,
                       fontWeight: "bold",
                       color: "#e76f51",
                     }}
@@ -114,8 +114,8 @@ export default class Home extends React.Component {
                 <View
                   style={{
                     borderBottomWidth: 2,
-                    width: "85%",
-                    marginLeft: 30,
+                    width: "90%",
+                    marginLeft: 20,
                     marginTop: 20,
                     opacity: 0.3,
                   }}
@@ -186,31 +186,30 @@ const styles = StyleSheet.create({
   bottomcontainer: {
     width: "100%",
     backgroundColor: "#fff",
-    marginTop: 50,
-
+    marginTop: 20,
+    shadowColor: "black",
+    shadowRadius: 60,
+    shadowOpacity: 0.5,
+    
     justifyContent: "center",
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
+    borderRadius: 50,
   },
   todaycontainer: {
     paddingVertical: 6,
     borderBottomWidth: 4,
-    
   },
   today: {
     fontWeight: "bold",
-    fontSize: 25,
-    
+    fontSize: 21,
   },
   monthcontainer: {
-    marginLeft: 30,
+    marginLeft: 20,
     borderBottomWidth: 4,
     paddingVertical: 6,
-    
   },
   month: {
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 21,
     opacity: 0.5,
   },
 });
