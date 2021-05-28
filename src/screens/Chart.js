@@ -24,8 +24,8 @@ const data={
     ]
   }
 // const Graph = () => {
-export default class Chart extends React.Component {
-    render() {
+export default function Chart (props) {
+    
           const {navigate} = this.props.navigation;
         return (
             <ImageBackground
@@ -91,7 +91,7 @@ export default class Chart extends React.Component {
                 </View>
             </ImageBackground>
         )
-    }
+    
 }
 
 // export default Graph

@@ -39,28 +39,28 @@ export default function AddItems({navigation})  {
         setList(newList);
     }
        const { navigate } = navigation;
-      const RecordItems = [
-         {
-           image: require("../images/electricity.png"),
-           title: "Electricity",
-           price: "$ -23.00",
-         },
-         {
-           image: require("../images/taxi.png"),
-           title: "Taxi",
-           price: "$ -39.00",
-         },
-         {
-           image: require("../images/food.png"),
-           title: "Food & Drinks",
-           price: "$ -40.00",
-         },
-         {
-           image: require("../images/train.png"),
-           title: "Train",
-           price: "$ -20.00",
-         },
-      ];
+      // const RecordItems = [
+      //    {
+      //      image: require("../images/electricity.png"),
+      //      title: "Electricity",
+      //      price: "$ -23.00",
+      //    },
+      //    {
+      //      image: require("../images/taxi.png"),
+      //      title: "Taxi",
+      //      price: "$ -39.00",
+      //    },
+      //    {
+      //      image: require("../images/food.png"),
+      //      title: "Food & Drinks",
+      //      price: "$ -40.00",
+      //    },
+      //    {
+      //      image: require("../images/train.png"),
+      //      title: "Train",
+      //      price: "$ -20.00",
+      //    },
+      // ];
   
      
       const [list, setList] = React.useState(RecordItems);
@@ -177,8 +177,8 @@ export default function AddItems({navigation})  {
                         setPic(require("../images/taxi.png"));
                       }
                       else if (itemValue === "Electricity") {
-                        setPic(pic = require("../images/electricity.png"));
-                          }else{  (pic = require("../images/food.png"));}
+                        setPic(require("../images/electricity.png"));
+                          }else{  setPic(require("../images/food.png"));}
                          
                       
                       setSelectedValue(itemValue);

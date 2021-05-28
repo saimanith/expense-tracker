@@ -11,8 +11,8 @@ import {
   TextInput,
 } from "react-native";
 
-export default class RecordItem extends Component {
-    render() {
+export default function RecordItem(props) {
+   
         return (
           <View>
             <View
@@ -38,7 +38,7 @@ export default class RecordItem extends Component {
                   <Image
                     resizeMode="contain"
                     style={{ height: 30, width: 30 }}
-                    source={this.props.data.image}
+                    source={props.data.image}
                   />
                 </View>
                 <Text
@@ -48,7 +48,7 @@ export default class RecordItem extends Component {
                     marginLeft: 10,
                   }}
                 >
-                  {this.props.data.title}
+                  {props.data.title}
                 </Text>
               </View>
               <Text
@@ -58,7 +58,7 @@ export default class RecordItem extends Component {
                   color: "#e76f51",
                 }}
               >
-                {this.props.data.price}
+                {props.data.price}
               </Text>
             </View>
             <View
@@ -72,5 +72,5 @@ export default class RecordItem extends Component {
             ></View>
           </View>
         );
-    }
+    
 }

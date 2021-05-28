@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View,Image } from 'react-native'
 
-export default class ListItem extends Component {
-    render() {
+export default function ListItem (props){
+    
         return (
           <View
             style={{
@@ -28,7 +28,7 @@ export default class ListItem extends Component {
                 <Image
                   resizeMode="contain"
                   style={{ height: 30, width: 30 }}
-                  source={this.props.item.image}
+                  source={props.item.image}
                 />
               </View>
               <Text
@@ -38,7 +38,7 @@ export default class ListItem extends Component {
                   marginLeft: 10,
                 }}
               >
-{this.props.item.title}
+{props.item.title}
               </Text>
             </View>
             <Text
@@ -48,9 +48,9 @@ export default class ListItem extends Component {
                 color: "#e76f51",
               }}
             >
-              {this.props.item.price}
+              {props.item.price}
             </Text>
           </View>
         );
-    }
+    
 }
