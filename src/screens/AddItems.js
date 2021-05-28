@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  Picker,
   TextInput,
 } from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
@@ -23,14 +24,16 @@ export default function AddItems({navigation})  {
     title: "Home",
     };
     function handleChange(value) {
-          console.log(`Check ${value}`)
+          // console.log(`Check ${value}`)
         setNumber(value);
       }
 
-    function handleAdd() {
+  function handleAdd() {
+    console.log(icon);
+    
     const newList = list.concat({
-        image: require("../images/food.png"),
-        title: "Food & Drinks",
+        image: pic,
+        title: selectedValue,
         price: `$ -${number}.00`,
     });
         setList(newList);
@@ -63,7 +66,9 @@ export default function AddItems({navigation})  {
       const [list, setList] = React.useState(RecordItems);
       const [number, setNumber] = React.useState(null);
 
-      
+  const [selectedValue, setSelectedValue] = React.useState("java");
+  const [icon, setIcon] = React.useState("food");
+           const [pic, setPic] = React.useState(require('../images/food.png'));
           
         
       
@@ -147,11 +152,50 @@ export default function AddItems({navigation})  {
                   <Image
                     resizeMode="contain"
                     style={{ height: 30, width: 30 }}
-                    source={require("../images/food.png")}
+                    source={pic}
                   />
                 </View>
                 <View>
-                  <Text
+                  <Picker
+                    selectedValue={selectedValue}
+                    style={{
+                      fontSize: 25,
+                      height: 60,
+                      width: 300,
+                      alignItems: "center",
+                      marginLeft: 10,
+                    }}
+                    onValueChange={(itemValue, itemIndex) => {
+                      
+                      if (itemValue === "Food & Drinks") {
+                        setPic(require("../images/food.png"));
+                      }
+                      else if (itemValue === "Train") {
+                        setPic(require("../images/train.png"));
+                      }
+                      else if (itemValue === "Taxi") {
+                        setPic(require("../images/taxi.png"));
+                      }
+                      else if (itemValue === "Electricity") {
+                        setPic(pic = require("../images/electricity.png"));
+                          }else{  (pic = require("../images/food.png"));}
+                         
+                      
+                      setSelectedValue(itemValue);
+                      setIcon(itemValue);
+                    }
+                  }
+                  >
+                    <Picker.Item
+                      
+                      label="Food & Drink"
+                      value="Food & Drink"
+                    />
+                    <Picker.Item label="Electricity" value="Electricity" />
+                    <Picker.Item label="Taxi" value="Taxi" />
+                    <Picker.Item label="Train" value="Train" />
+                  </Picker>
+                  {/* <Text
                     style={{
                       fontSize: 21,
                       fontWeight: "bold",
@@ -168,10 +212,10 @@ export default function AddItems({navigation})  {
                       marginLeft: 20,
                       opacity: 0.4,
                     }}
-                  ></View>
+                  ></View> */}
                 </View>
               </View>
-              <Icon name="down" size={35} color="#00192D" />
+              {/* <Icon name="down" size={35} color="#00192D" /> */}
             </View>
 
             <View
