@@ -1,7 +1,7 @@
 export const TodayItems = [
   {
     image: require("../images/electricity.png"),
-    title: "Electricity",
+    title: "Electricity...",
     price: "$ 4.00",
   },
   {
